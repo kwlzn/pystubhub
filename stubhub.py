@@ -69,7 +69,7 @@ class ClientBase(object):
     query = self.resolve_query(search_params)
     response = requests.get(self.BASE_URI, params=self.resolve_params(dict(q=query, **uri_params)))
     response.raise_for_status()
-    return response
+    return response.json()
 
   def find_or_cache_obj(self, obj_type):
     if obj_type not in self._obj_cache:
