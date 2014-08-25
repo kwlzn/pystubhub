@@ -1,6 +1,9 @@
 import requests
 import simplejson
 
+# Simple python bindings for the StubHub LCS.
+# http://stubhubapi.stubhub.com/index.php/Anatomy_of_a_Listing_Catalog_Service_HTTP_Request
+
 
 class RemoteObject(object):
   def __init__(self, parent, obj_type=None):
