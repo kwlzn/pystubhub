@@ -26,10 +26,6 @@ class RemoteObject(object):
     return '<%s>' % self.obj_type.title()
 
 
-class Ticket(RemoteObject):
-  """A Stubhub Ticket object."""
-
-
 class Event(RemoteObject):
   """A Stubhub Event object."""
 
@@ -37,11 +33,19 @@ class Event(RemoteObject):
     return RemoteObject.fetch(self, *args, meta_param='event_id', **kwargs)
 
 
+class Genre(RemoteObject):
+  """A Stubhub Genre object."""
+
+
 class Geo(RemoteObject):
   """A Stubhub Geo object."""
 
   def fetch(self, *args, **kwargs):
     return RemoteObject.fetch(self, *args, meta_param='geoId', **kwargs)
+
+
+class Ticket(RemoteObject):
+  """A Stubhub Ticket object."""
 
 
 class Venue(RemoteObject):
@@ -89,6 +93,10 @@ class StubHubClient(ClientBase):
   @property
   def Event(self):
     return self.find_or_cache_obj('Event')
+
+  @property
+  def Genre(self):
+    return self.find_or_cache_obj('Genre')
 
   @property
   def Geo(self):

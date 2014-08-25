@@ -22,9 +22,10 @@ usage
 
 Supports the following objects:
 
-  - Ticket
   - Event
+  - Genre
   - Geo
+  - Ticket
   - Venue
 
 Supports the following methods per object:
