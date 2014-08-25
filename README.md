@@ -3,6 +3,25 @@ pystubhub
 
 python bindings to the stubhub api
 
+
+features
+--------
+
+Supports the following API objects:
+
+  - Event
+  - Genre
+  - Geo
+  - Ticket
+  - Venue
+
+Supports the following methods per object:
+
+  - fetch(object_id)
+  - search_by_name(search_query)
+  - search(param=val, param2=val)
+
+
 usage
 -----
 
@@ -18,21 +37,6 @@ usage
 
     # Search Event objects by arbitrary fields.
     events = stubhub.Event.search(description='chvrches')
-
-
-Supports the following objects:
-
-  - Event
-  - Genre
-  - Geo
-  - Ticket
-  - Venue
-
-Supports the following methods per object:
-
-  - fetch(object_id)
-  - search_by_name(search_query)
-  - search(param=val, param2=val)
 
 
 notes, etc
