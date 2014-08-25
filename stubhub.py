@@ -1,4 +1,5 @@
 import requests
+import simplejson
 
 
 class RemoteObject(object):
@@ -51,6 +52,8 @@ class Venue(RemoteObject):
 
 
 class ClientBase(object):
+  class ContentError(Exception): pass
+
   def __init__(self, credentials=None):
     self.credentials = credentials
     self._obj_cache = {}
@@ -69,7 +72,10 @@ class ClientBase(object):
     query = self.resolve_query(search_params)
     response = requests.get(self.BASE_URI, params=self.resolve_params(dict(q=query, **uri_params)))
     response.raise_for_status()
-    return response.json()
+    try:
+      return response.json()['response']['docs']
+    except (KeyError, simplejson.scanner.JSONDecodeError) as e:
+      raise self.ContentError(response=response, original_exc=e)
 
   def find_or_cache_obj(self, obj_type):
     if obj_type not in self._obj_cache:

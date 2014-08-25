@@ -20,6 +20,12 @@ usage
     events = stubhub.Event.search(description='chvrches')
 
 
-Supports the following objects: Ticket, Event, Geo, Venue
+- Supports the following objects: Ticket, Event, Geo, Venue
 
-Supports the following methods per object: fetch, search_by_name, search
+- Supports the following methods per object: fetch, search_by_name, search
+
+
+notes
+=====
+
+- loosely based on https://github.com/rloomba/stubhub
