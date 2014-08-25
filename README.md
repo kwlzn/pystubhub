@@ -4,7 +4,7 @@ pystubhub
 python bindings to the stubhub api
 
 usage
-=====
+-----
 
     from stubhub import StubhubClient
 
@@ -20,12 +20,21 @@ usage
     events = stubhub.Event.search(description='chvrches')
 
 
-- Supports the following objects: Ticket, Event, Geo, Venue
+Supports the following objects:
 
-- Supports the following methods per object: fetch, search_by_name, search
+	- Ticket
+	- Event
+	- Geo
+	- Venue
+
+Supports the following methods per object:
+
+	- fetch(object_id)
+	- search_by_name(search_query)
+	- search(param=val, param2=val)
 
 
-notes
-=====
+notes, etc
+----------
 
-- loosely based on https://github.com/rloomba/stubhub
+- loosely based on https://github.com/rloomba/stubhub (Ruby)
