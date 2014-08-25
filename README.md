@@ -22,16 +22,16 @@ usage
 
 Supports the following objects:
 
-	- Ticket
-	- Event
-	- Geo
-	- Venue
+  - Ticket
+  - Event
+  - Geo
+  - Venue
 
 Supports the following methods per object:
 
-	- fetch(object_id)
-	- search_by_name(search_query)
-	- search(param=val, param2=val)
+  - fetch(object_id)
+  - search_by_name(search_query)
+  - search(param=val, param2=val)
 
 
 notes, etc
