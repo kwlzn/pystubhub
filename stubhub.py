@@ -1,11 +1,5 @@
 import requests
 
-# from stubhub import StubhubClient
-#
-# stubhub = StubhubClient()
-#
-# events = stubhub.Event.search_by_name('chvrches')
-
 
 class RemoteObject(object):
   def __init__(self, parent, obj_type=None):
